@@ -1,1 +1,138 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
+body {
+  font-family: "Segoe UI Variable", "Segoe UI", system-ui, sans-serif;
+  background: #d9d9d9;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: #1a1a1a;
+}
+
+.window {
+  width: 900px;
+  height: 600px;
+  background: #f3f3f3;
+  border-radius: 8px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Toolbar */
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  background: #f9f9f9;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.nav-buttons { display: flex; gap: 4px; }
+
+.nav-btn {
+  width: 30px;
+  height: 30px;
+  border: none;
+  background: transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #1a1a1a;
+}
+
+.nav-btn:hover { background: #eaeaea; }
+.nav-btn:disabled { color: #b0b0b0; cursor: default; }
+.nav-btn:disabled:hover { background: transparent; }
+
+/* Breadcrumb */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  font-size: 13px;
+  flex: 1;
+}
+
+.crumb {
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #1a1a1a;
+}
+
+.crumb:hover { background: #eaeaea; }
+
+.crumb-sep { color: #999; font-size: 11px; }
+
+/* Main layout */
+.main {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 200px;
+  background: #f9f9f9;
+  border-right: 1px solid #e5e5e5;
+  padding: 10px 8px;
+}
+
+.sidebar-item {
+  padding: 7px 10px;
+  border-radius: 4px;
+  font-size: 13px;
+  cursor: pointer;
+  color: #1a1a1a;
+}
+
+.sidebar-item:hover { background: #eaeaea; }
+
+.sidebar-divider {
+  height: 1px;
+  background: #e5e5e5;
+  margin: 8px 6px;
+}
+
+/* File list */
+.files {
+  flex: 1;
+  padding: 12px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.file {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.1s ease;
+  user-select: none;
+}
+
+.file:hover { background: #eaeaea; }
+.file.selected { background: #0067c0; color: white; }
+.file.selected .file-icon { filter: brightness(2); }
+
+.file-icon { font-size: 16px; }
+
+/* Status bar */
+.statusbar {
+  padding: 6px 14px;
+  background: #f9f9f9;
+  border-top: 1px solid #e5e5e5;
+  font-size: 12px;
+  color: #5c5c5c;
+}
